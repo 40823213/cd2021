@@ -1,1 +1,1 @@
-var tipuesearch = {"pages": [{'title': 'About', 'text': '倉儲: https://github.com/40823213/cd2021 \n 二人小組:40823213、40823232', 'tags': '', 'url': 'About.html'}]};
+var tipuesearch = {"pages": [{'title': 'About', 'text': '倉儲: https://github.com/40823213/cd2021 \n 二人小組:40823213、40823232 \n', 'tags': '', 'url': 'About.html'}, {'title': 'work', 'text': '', 'tags': '', 'url': 'work.html'}, {'title': 'w1', 'text': '', 'tags': '', 'url': 'w1.html'}]};
