@@ -137,90 +137,9 @@ img.add_border {
 <p>task1</p>
 <h4>使用程式跑出stage3的小組、組長、組員超連結</h4>
 <p>影片</p>
+<p>影片:請從6:25分之後開始，便可了解程式原理以及方法</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="300" src="https://www.youtube.com/embed/yEfYtkTvw-Q" title="YouTube video player" width="500"></iframe></p>
-<p>程式碼:</p>
-<div class="line number1 index0 alt2"><code class="html plain">def stu2b(account):</code></div>
-<div class="line number2 index1 alt1"><code class="html spaces">    </code><code class="html plain">if account == "40823231":</code></div>
-<div class="line number3 index2 alt2"><code class="html spaces">        </code><code class="html plain">return account + "-2"</code></div>
-<div class="line number4 index3 alt1"><code class="html spaces">    </code><code class="html plain">elif account[0:3] == "407":</code></div>
-<div class="line number5 index4 alt2"><code class="html spaces">        </code><code class="html plain">return "s" + account</code></div>
-<div class="line number6 index5 alt1"><code class="html spaces">    </code><code class="html plain">else:</code></div>
-<div class="line number7 index6 alt2"><code class="html spaces">        </code><code class="html plain">return account</code></div>
-<div class="line number8 index7 alt1"> </div>
-<div class="line number9 index8 alt2"><code class="html plain">teamb = []</code></div>
-<div class="line number10 index9 alt1"> </div>
-<div class="line number11 index10 alt2"><code class="html plain"># open file, default is read mode, since txt content no chinese char</code></div>
-<div class="line number12 index11 alt1"><code class="html plain"># no encoding = "UTF-8" is needed</code></div>
-<div class="line number13 index12 alt2"><code class="html plain">with open("stage3_2b.txt") as fh:</code></div>
-<div class="line number14 index13 alt1"><code class="html spaces">    </code><code class="html plain"># readlines will read into the whole line and put into list format</code></div>
-<div class="line number15 index14 alt2"><code class="html spaces">    </code><code class="html plain"># has \n at the end of each line</code></div>
-<div class="line number16 index15 alt1"><code class="html spaces">    </code><code class="html plain">data = fh.readlines()</code></div>
-<div class="line number17 index16 alt2"><code class="html plain">#print(len(data))</code></div>
-<div class="line number18 index17 alt1"><code class="html plain">for i in range(len(data)):</code></div>
-<div class="line number19 index18 alt2"><code class="html spaces">    </code><code class="html plain">group = data[i].rstrip("\n").split("\t")</code></div>
-<div class="line number20 index19 alt1"><code class="html spaces">    </code><code class="html plain">teamb.append(group)</code></div>
-<div class="line number21 index20 alt2"><code class="html spaces">    </code> </div>
-<div class="line number22 index21 alt1"><code class="html plain">output = ""   </code></div>
-<div class="line number23 index22 alt2"><code class="html plain">seperator = "-"*10 + "&lt;</code><code class="html keyword">br</code><span> </span><code class="html plain">/&gt;"</code></div>
-<div class="line number24 index23 alt1"> </div>
-<div class="line number25 index24 alt2"><code class="html plain">for i in teamb[0:]:</code></div>
-<div class="line number26 index25 alt1"><code class="html spaces">    </code><code class="html plain">team = i[0]</code></div>
-<div class="line number27 index26 alt2"><code class="html spaces">    </code><code class="html plain">leader = stu2b(i[1])</code></div>
-<div class="line number28 index27 alt1"><code class="html spaces">    </code><code class="html plain">m1 = stu2b(i[3])</code></div>
-<div class="line number29 index28 alt2"><code class="html spaces">    </code><code class="html plain">m2 = stu2b(i[5])</code></div>
-<div class="line number30 index29 alt1"><code class="html spaces">    </code><code class="html plain">m3 = stu2b(i[7])</code></div>
-<div class="line number31 index30 alt2"><code class="html spaces">    </code><code class="html plain">m4 = stu2b(i[9])</code></div>
-<div class="line number32 index31 alt1"><code class="html spaces">    </code><code class="html plain">m5 = stu2b(i[11])</code></div>
-<div class="line number33 index32 alt2"><code class="html spaces">    </code><code class="html plain">m6 = stu2b(i[13])</code></div>
-<div class="line number34 index33 alt1"><code class="html spaces">    </code> </div>
-<div class="line number35 index34 alt2"><code class="html spaces">    </code><code class="html plain">try:</code></div>
-<div class="line number36 index35 alt1"><code class="html spaces">        </code><code class="html plain">m7 = stu2b(i[15])</code></div>
-<div class="line number37 index36 alt2"><code class="html spaces">    </code><code class="html plain">except:</code></div>
-<div class="line number38 index37 alt1"><code class="html spaces">        </code><code class="html plain">m7 = ""</code></div>
-<div class="line number39 index38 alt2"><code class="html spaces">    </code><code class="html plain">try:</code></div>
-<div class="line number40 index39 alt1"><code class="html spaces">        </code><code class="html plain">m8 = stu2b(i[17])</code></div>
-<div class="line number41 index40 alt2"><code class="html spaces">    </code><code class="html plain">except:</code></div>
-<div class="line number42 index41 alt1"><code class="html spaces">        </code><code class="html plain">m8 = ""</code></div>
-<div class="line number43 index42 alt2"><code class="html spaces">        </code> </div>
-<div class="line number44 index43 alt1"><code class="html spaces">    </code><code class="html plain">leaderrepo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + leader + "/cd2021'</code><code class="html plain">&gt;" + leader + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number45 index44 alt2"><code class="html spaces">    </code><code class="html plain">leadersite = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + leader + ".github.io/cd2021'</code><code class="html plain">&gt;" + leader +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number46 index45 alt1"><code class="html spaces">    </code><code class="html plain">m1repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m1 + "/cd2021'</code><code class="html plain">&gt;" + m1 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number47 index46 alt2"><code class="html spaces">    </code><code class="html plain">m1site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m1 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m1 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number48 index47 alt1"><code class="html spaces">    </code><code class="html plain">m2repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m2 + "/cd2021'</code><code class="html plain">&gt;" + m2 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number49 index48 alt2"><code class="html spaces">    </code><code class="html plain">m2site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m2 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m2 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number50 index49 alt1"><code class="html spaces">    </code><code class="html plain">m3repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m3 + "/cd2021'</code><code class="html plain">&gt;" + m3 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number51 index50 alt2"><code class="html spaces">    </code><code class="html plain">m3site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m3 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m3 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number52 index51 alt1"><code class="html spaces">    </code><code class="html plain">m4repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m4 + "/cd2021'</code><code class="html plain">&gt;" + m4 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number53 index52 alt2"><code class="html spaces">    </code><code class="html plain">m4site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m4 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m4 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number54 index53 alt1"><code class="html spaces">    </code><code class="html plain">m5repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m5 + "/cd2021'</code><code class="html plain">&gt;" + m5 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number55 index54 alt2"><code class="html spaces">    </code><code class="html plain">m5site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m5 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m5 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number56 index55 alt1"><code class="html spaces">    </code><code class="html plain">m6repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m6 + "/cd2021'</code><code class="html plain">&gt;" + m6 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number57 index56 alt2"><code class="html spaces">    </code><code class="html plain">m6site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m6 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m6 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number58 index57 alt1"><code class="html spaces"> </code> </div>
-<div class="line number59 index58 alt2"> </div>
-<div class="line number60 index59 alt1"><code class="html spaces">    </code><code class="html plain">teamrepo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + leader + "/" + team + "'</code><code class="html plain">&gt;" + team + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number61 index60 alt2"><code class="html spaces">    </code><code class="html plain">teamsite =  "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m1 + ".github.io/" + team + "'</code><code class="html plain">&gt;" + team +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number62 index61 alt1"> </div>
-<div class="line number63 index62 alt2"><code class="html spaces">    </code><code class="html plain">output += teamrepo + " | " + teamsite + " | " +leaderrepo + " | " + leadersite + " | " +m1repo + " | " + m1site + " | " +m2repo + " | " + m2site + " | " +m3repo + " | " + m3site + " | " +m4repo + " | " + m4site + " | " +m5repo + " | " + m5site + " | " +m6repo + " | " + m6site</code></div>
-<div class="line number64 index63 alt1"><code class="html spaces">    </code> </div>
-<div class="line number65 index64 alt2"><code class="html spaces">    </code><code class="html plain">if m7 != "":</code></div>
-<div class="line number66 index65 alt1"><code class="html spaces">       </code><code class="html plain">m7repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m7 + "/cd2021'</code><code class="html plain">&gt;" + m7 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number67 index66 alt2"><code class="html spaces">       </code><code class="html plain">m7site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m7 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m7 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"  </code></div>
-<div class="line number68 index67 alt1"><code class="html spaces">       </code><code class="html plain">output += " |  " + m7repo + "| " + m7site</code></div>
-<div class="line number69 index68 alt2"><code class="html spaces">    </code><code class="html plain">else:</code></div>
-<div class="line number70 index69 alt1"><code class="html spaces">        </code><code class="html plain">output += ""</code></div>
-<div class="line number71 index70 alt2"><code class="html spaces">    </code> </div>
-<div class="line number72 index71 alt1"><code class="html spaces">    </code><code class="html plain">if m8 != "":</code></div>
-<div class="line number73 index72 alt2"><code class="html spaces">       </code><code class="html plain">m8repo = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://github.com/" + m8 + "/cd2021'</code><code class="html plain">&gt;" + m8 + " repo&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"</code></div>
-<div class="line number74 index73 alt1"><code class="html spaces">       </code><code class="html plain">m8site = "&lt;</code><code class="html keyword">a</code><span> </span><code class="html color1">href</code><code class="html plain">=</code><code class="html string">'http://" + m8 + ".github.io/cd2021'</code><code class="html plain">&gt;" + m8 +  " site&lt;/</code><code class="html keyword">a</code><code class="html plain">&gt;"  </code></div>
-<div class="line number75 index74 alt2"><code class="html spaces">       </code><code class="html plain">output += " |  " + m8repo + "| " + m8site + "&lt;</code><code class="html keyword">br</code><span> </span><code class="html plain">/&gt;" + seperator</code></div>
-<div class="line number76 index75 alt1"><code class="html spaces">    </code><code class="html plain">else:</code></div>
-<div class="line number77 index76 alt2"><code class="html spaces">        </code><code class="html plain">output += "&lt;</code><code class="html keyword">br</code><span> </span><code class="html plain">/&gt;" + seperator</code></div>
-<div class="line number78 index77 alt1"> </div>
-<div class="line number79 index78 alt2"> </div>
-<div class="line number80 index79 alt1"><code class="html plain">print(output)</code></div>
-<div class="line number81 index80 alt2"><code class="html plain"># the following will use group data to generate needed html</code></div>
-<div class="line number81 index80 alt2"><code class="html plain"><img alt="" height="293" src="./../images/程式.py.PNG" width="500"/></code></div><br />w10 << <a href='w10.html'>Previous</a> <a href='直播.html'>Next</a> >> 直播</div>
+<p>程式碼:</p><br />w10 << <a href='w10.html'>Previous</a> <a href='直播.html'>Next</a> >> 直播</div>
         
     <!-- footer -->
       <div class="container">
