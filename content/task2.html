@@ -134,10 +134,41 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w14~15 << <a href='w14~15.html'>Previous</a> <a href='筆記.html'>Next</a> >> 筆記<br /><h1>task2</h1>
-<p>藉由以前的基礎，透過程式驅動</p>
+<p>藉由以前的基礎，透過程式驅動。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sim as vrep
+import math
+import random
+import time
+  
+print ('Start')
+  
+# Close eventual old connections
+vrep.simxFinish(-1)
+# Connect to V-REP remote server
+clientID = vrep.simxStart('192.168.192.115', 19997, True, True, 5000, 5)
+  
+if clientID != -1:
+    print ('Connected to remote API server')
+  
+    res = vrep.simxAddStatusbarMessage(
+        clientID, "40823232",
+        vrep.simx_opmode_oneshot)
+    if res not in (vrep.simx_return_ok, vrep.simx_return_novalue_flag):
+        print("Could not add a message to the status bar.")
+    # Communication operating mode with the remote API : wait for its answer before continuing (blocking mode)
+    # http://www.coppeliarobotics.com/helpFiles/en/remoteApiConstants.htm
+    opmode = vrep.simx_opmode_oneshot_wait
+  
+    # Try to retrieve motors and robot handlers
+    # http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectHandle
+    vrep.simxStartSimulation(clientID,opmode)
+    ret1,front_handle = vrep.simxGetObjectHandle(clientID, "Revolute_joint", opmode)
+     
+ 
+else:
+    print ('Failed connecting to remote API server')</pre>
 <p><code class="html plain"></code></p>
-<p><code class="html plain"></code></p>
-<br />w14~15 << <a href='w14~15.html'>Previous</a> <a href='筆記.html'>Next</a> >> 筆記</div>
+<p><code class="html plain"></code></p><br />w14~15 << <a href='w14~15.html'>Previous</a> <a href='筆記.html'>Next</a> >> 筆記</div>
         
     <!-- footer -->
       <div class="container">
