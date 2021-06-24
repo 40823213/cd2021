@@ -133,41 +133,24 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">robodk 練習 << <a href='robodk 練習.html'>Previous</a> <a href='task3.html'>Next</a> >> task3<br /><h1>task2</h1>
-<p>藉由以前的基礎，透過程式驅動。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sim as vrep
-import math
-import random
-import time
-  
-print ('Start')
-  
-# Close eventual old connections
-vrep.simxFinish(-1)
-# Connect to V-REP remote server
-clientID = vrep.simxStart('192.168.192.115', 19997, True, True, 5000, 5)
-  
-if clientID != -1:
-    print ('Connected to remote API server')
-  
-    res = vrep.simxAddStatusbarMessage(
-        clientID, "40823232",
-        vrep.simx_opmode_oneshot)
-    if res not in (vrep.simx_return_ok, vrep.simx_return_novalue_flag):
-        print("Could not add a message to the status bar.")
-    # Communication operating mode with the remote API : wait for its answer before continuing (blocking mode)
-    # http://www.coppeliarobotics.com/helpFiles/en/remoteApiConstants.htm
-    opmode = vrep.simx_opmode_oneshot_wait
-  
-    # Try to retrieve motors and robot handlers
-    # http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxGetObjectHandle
-    vrep.simxStartSimulation(clientID,opmode)
-    ret1,front_handle = vrep.simxGetObjectHandle(clientID, "Revolute_joint", opmode)
-     
- 
-else:
-    print ('Failed connecting to remote API server')</pre>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/Fl1O_Nr4s-M" title="YouTube video player" width="560"></iframe></p><br />robodk 練習 << <a href='robodk 練習.html'>Previous</a> <a href='task3.html'>Next</a> >> task3</div>
+    <div id="tipue_search_content">task3 << <a href='task3.html'>Previous</a> <a href='心得.html'>Next</a> >> 心得<br /><h1>期末考w17</h1>
+<p>w16exam:https://drive.google.com/drive/u/1/my-drive</p>
+<p><code class="html plain"></code>1.運用onshape繪製出圖</p>
+<p>圖檔點這邊下載:<a href="./../downloads/Assembly 1 (2).stl">圖檔</a></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="300" src="https://www.youtube.com/embed/VYs1uMYwRrg" title="YouTube video player" width="500"></iframe></p>
+<p></p>
+<p>2.建立 CoppeliaSim 4.1.0 MTB robot 場景<span> </span></p>
+<p>箱子還有吸盤是用叫出來的，將剩下的東西按照機動順序組合起來。並嘗試輸入lua程式</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="300" src="https://www.youtube.com/embed/_QY8SF5StfM" title="YouTube video player" width="500"></iframe></p>
+<p></p>
+<p>3.手臂末端加入 components-gripper-suction pad 吸盤</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="300" src="https://www.youtube.com/embed/LResMF4bdUc" title="YouTube video player" width="500"></iframe></p>
+<p></p>
+<p>4.逆向運動學函式</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="300" src="https://www.youtube.com/embed/_QY8SF5StfM" title="YouTube video player" width="500"></iframe></p>
+<p></p>
+<p>5.Python remote API 逆向運動學函式</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="300" src="https://www.youtube.com/embed/TzaTOdkKxig" title="YouTube video player" width="500"></iframe></p><br />task3 << <a href='task3.html'>Previous</a> <a href='心得.html'>Next</a> >> 心得</div>
         
     <!-- footer -->
       <div class="container">
